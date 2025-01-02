@@ -9,7 +9,7 @@ const displayData = (recipesById) => {
     body.innerHTML = `
         <div class="container">
             ${header()}
-            ${nav()}
+            ${nav(recipesById)}
             ${main(recipesById)}
         </div>
     `;

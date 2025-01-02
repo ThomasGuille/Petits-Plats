@@ -6,7 +6,7 @@ export const header = () => {
             </a>
 
             <div class="head__content">
-                <h1 class="main__title">CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</h1>
+                <h1 class="main__title">CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES</h1>
                 <div class="search__form">
                     <input type="text" class="search__field" placeholder="Rchercher une recette, un ingrédient,...">
                     <i class="fa-solid fa-x search__clear"></i>

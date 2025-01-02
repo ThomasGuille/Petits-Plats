@@ -1,4 +1,18 @@
-export const nav = () => {
+export const nav = (recipesById) => {
+    let appliances = [];
+    recipesById.forEach(elem => {
+        if(!appliances.includes(elem.appliance)){
+            appliances.push(elem.appliance);
+        }
+    });
+
+    let appliancesFilter = ``;
+    appliances.forEach(item => {
+        appliancesFilter += `
+            <a href="" class="dropdown__item">${item}</a>
+        `;
+    })
+
     return `
         <nav class="nav">
             <div class="dropdown dropdown__ingredients">
@@ -37,9 +51,7 @@ export const nav = () => {
                 <p class="search__result"></p>
 
                 <div class="search__arguments">
-                    <a href="" class="dropdown__item">appareil au pif</a>
-                    <a href="" class="dropdown__item">appareil au pif</a>
-                    <a href="" class="dropdown__item">appareil au pif</a>
+                    ${appliancesFilter}
                 </div>
             </div>
 

@@ -11,5 +11,6 @@ export const getData = async () => {
 
 export const getRecipes = async () => {
     const data = await getData();
+
     return data.recipes;
 }
