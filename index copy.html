@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css">
+    <title>Les Petits Plats</title>
+</head>
+<body>
+    <div class="container">
+        <header class="head">
+            <a href="index.html" class="logo">
+                <img src="assets/logo-petits-plats.png" class="logo" alt="logo petits plats">
+            </a>
+
+            <div class="head__content">
+                <h1 class="main__title">CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</h1>
+                <div class="search__form">
+                    <input type="text" class="search__field" placeholder="Rchercher une recette, un ingrédient,...">
+                    <i class="fa-solid fa-x search__clear"></i>
+                    <img src="assets/search-icon.png" alt="" class="search__icon">
+                </div>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <div class="dropdown dropdown__ingredients">
+                <div class="dropdown__menu">
+                    <p class="dropdown__title">Ingrédients</p>
+                    <i class="fa-solid fa-chevron-down dropdown__chevron"></i>
+                </div>
+
+                <div class="dropdown__search__form">
+                    <input type="text" class="dropdown__search__field">
+                    <i class="fa-solid fa-x dropdown__search__clear"></i>
+                    <i class="fa-solid fa-magnifying-glass dropdown__search__icon"></i>
+                </div>
+
+                <p class="search__result"></p>
+
+                <div class="search__arguments">
+                    <a href="" class="dropdown__item">ingrédient au pif</a>
+                    <a href="" class="dropdown__item">ingrédient au pif</a>
+                    <a href="" class="dropdown__item">ingrédient au pif</a>
+                </div>
+            </div>
+
+            <div class="dropdown dropdown__appareils">
+                <div class="dropdown__menu">
+                    <p class="dropdown__title">Appareils</p>
+                    <i class="fa-solid fa-chevron-down dropdown__chevron"></i>
+                </div>
+
+                <div class="dropdown__search__form">
+                    <input type="text" class="dropdown__search__field">
+                    <i class="fa-solid fa-x dropdown__search__clear"></i>
+                    <i class="fa-solid fa-magnifying-glass dropdown__search__icon"></i>
+                </div>
+
+                <p class="search__result"></p>
+
+                <div class="search__arguments">
+                    <a href="" class="dropdown__item">appareil au pif</a>
+                    <a href="" class="dropdown__item">appareil au pif</a>
+                    <a href="" class="dropdown__item">appareil au pif</a>
+                </div>
+            </div>
+
+            <div class="dropdown dropdown__ustensiles">
+                <div class="dropdown__menu">
+                    <p class="dropdown__title">Ustensiles</p>
+                    <i class="fa-solid fa-chevron-down dropdown__chevron"></i>
+                </div>
+
+                <div class="dropdown__search__form">
+                    <input type="text" class="dropdown__search__field">
+                    <i class="fa-solid fa-x dropdown__search__clear"></i>
+                    <i class="fa-solid fa-magnifying-glass dropdown__search__icon"></i>
+                </div>
+
+                <p class="search__result"></p>
+
+                <div class="search__arguments">
+                    <a href="" class="dropdown__item">ustensile au pif</a>
+                    <a href="" class="dropdown__item">ustensile au pif</a>
+                    <a href="" class="dropdown__item">ustensile au pif</a>
+                </div>
+            </div>
+
+            <p class="search__nb__recettes">1500 recettes</p>
+        </nav>
+
+        <main class="main">
+            <figure class="card">
+                <div class="card__picture">
+                    <p class="recette__time">10min</p>
+                    <img src="assets/recipes/Recette01.jpg" alt="" class="recette__picture">
+                </div>
+                <figcaption class="card__content">
+                    <h2 class="card__title">Titre recette</h2>
+                    <h3 class="details__title">RECETTE</h3>
+                    <p class="details__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta praesentium nulla dignissimos architecto sit laboriosam.</p>
+                    <h3 class="ingredients__title">INGREDIENTS</h3>
+                    <div class="ingredient__details">
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure class="card">
+                <div class="card__picture">
+                    <p class="recette__time">10min</p>
+                    <img src="assets/recipes/Recette01.jpg" alt="" class="recette__picture">
+                </div>
+                <figcaption class="card__content">
+                    <h2 class="card__title">Titre recette</h2>
+                    <h3 class="details__title">RECETTE</h3>
+                    <p class="details__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta praesentium nulla dignissimos architecto sit laboriosam.</p>
+                    <h3 class="ingredients__title">INGREDIENTS</h3>
+                    <div class="ingredient__details">
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure class="card">
+                <div class="card__picture">
+                    <p class="recette__time">10min</p>
+                    <img src="assets/recipes/Recette01.jpg" alt="" class="recette__picture">
+                </div>
+                <figcaption class="card__content">
+                    <h2 class="card__title">Titre recette</h2>
+                    <h3 class="details__title">RECETTE</h3>
+                    <p class="details__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta praesentium nulla dignissimos architecto sit laboriosam.</p>
+                    <h3 class="ingredients__title">INGREDIENTS</h3>
+                    <div class="ingredient__details">
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+                    </div>
+                </figcaption>
+            </figure>
+
+            <figure class="card">
+                <div class="card__picture">
+                    <p class="recette__time">10min</p>
+                    <img src="assets/recipes/Recette01.jpg" alt="" class="recette__picture">
+                </div>
+                <figcaption class="card__content">
+                    <h2 class="card__title">Titre recette</h2>
+                    <h3 class="details__title">RECETTE</h3>
+                    <p class="details__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta praesentium nulla dignissimos architecto sit laboriosam.</p>
+                    <h3 class="ingredients__title">INGREDIENTS</h3>
+                    <div class="ingredient__details">
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+
+                        <div class="ingredient__item">
+                            <p class="ingredient__name">Lait de coco</p>
+                            <p class="ingredient__quantity">400ml</p>
+                        </div>
+                    </div>
+                </figcaption>
+            </figure>
+        </main>
+    </div>
+
+    <script type="module" src="scripts/pages/index.js"></script>
+</body>
+</html>
