@@ -1,7 +1,7 @@
 
 import { getRecipes } from "../utils/api.js";
 import { header } from "../components/header.js";
-import { nav } from "../components/nav.js";
+import { nav, dropdownDisplay } from "../components/nav.js";
 import { main } from "../components/main.js";
 
 const displayData = (recipesById) => {
@@ -13,6 +13,8 @@ const displayData = (recipesById) => {
             ${main(recipesById)}
         </div>
     `;
+
+    dropdownDisplay();
 }
 
 (async () => {

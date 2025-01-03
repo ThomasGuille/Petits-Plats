@@ -1,14 +1,43 @@
 export const nav = (recipesById) => {
+    let ingredients = [];
     let appliances = [];
+    let ustensils = [];
     recipesById.forEach(elem => {
         if(!appliances.includes(elem.appliance)){
             appliances.push(elem.appliance);
         }
+        elem.ustensils.forEach(ustensile => {
+            if(!ustensils.includes(ustensile)){
+                ustensils.push(ustensile);
+            }
+        })
+        elem.ingredients.forEach(ingredient => {
+            if(!ingredients.includes(ingredient.ingredient)){
+                ingredients.push(ingredient.ingredient);
+            }
+        })
     });
+    ingredients.sort();
+    appliances.sort();
+    ustensils.sort();
 
+    let ingredientsFilter = ``;
+    ingredients.forEach(item => {
+        ingredientsFilter += `
+            <a href="" class="dropdown__item">${item}</a>
+        `;
+    })
+    
     let appliancesFilter = ``;
     appliances.forEach(item => {
         appliancesFilter += `
+            <a href="" class="dropdown__item">${item}</a>
+        `;
+    })
+
+    let ustensilsFilter = ``;
+    ustensils.forEach(item => {
+        ustensilsFilter += `
             <a href="" class="dropdown__item">${item}</a>
         `;
     })
@@ -30,9 +59,7 @@ export const nav = (recipesById) => {
                 <p class="search__result"></p>
 
                 <div class="search__arguments">
-                    <a href="" class="dropdown__item">ingrédient au pif</a>
-                    <a href="" class="dropdown__item">ingrédient au pif</a>
-                    <a href="" class="dropdown__item">ingrédient au pif</a>
+                    ${ingredientsFilter}
                 </div>
             </div>
 
@@ -70,13 +97,20 @@ export const nav = (recipesById) => {
                 <p class="search__result"></p>
 
                 <div class="search__arguments">
-                    <a href="" class="dropdown__item">ustensile au pif</a>
-                    <a href="" class="dropdown__item">ustensile au pif</a>
-                    <a href="" class="dropdown__item">ustensile au pif</a>
+                    ${ustensilsFilter}
                 </div>
             </div>
 
             <p class="search__nb__recettes">1500 recettes</p>
         </nav>
     `;
+}
+
+export const dropdownDisplay = () => {
+    const dropDowns = document.querySelectorAll(".dropdown");
+    dropDowns.forEach(drop => {
+        drop.addEventListener("click", () => {
+            drop.classList.toggle("dropdown__display");
+        })
+    })
 }

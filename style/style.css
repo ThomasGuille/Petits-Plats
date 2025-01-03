@@ -106,6 +106,16 @@ body, html{
     border-radius: 0.5rem;
     padding: 1rem 0.5rem;
     z-index: 5;
+    transition: all 0.5s;
+}
+.dropdown:hover{
+    cursor: pointer;
+}
+
+.dropdown__display{
+    height: 290px;
+    overflow: scroll;
+    transition: all 0.5s;
 }
 
 .dropdown__ingredients{
