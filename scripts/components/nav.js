@@ -55,8 +55,6 @@ export const nav = (recipesById) => {
                     <i class="fa-solid fa-magnifying-glass dropdown__search__icon"></i>
                 </div>
 
-                <p class="search__result"></p>
-
                 <div class="search__arguments">
                     ${ingredientsFilter}
                 </div>
@@ -74,8 +72,6 @@ export const nav = (recipesById) => {
                     <i class="fa-solid fa-magnifying-glass dropdown__search__icon"></i>
                 </div>
 
-                <p class="search__result"></p>
-
                 <div class="search__arguments">
                     ${appliancesFilter}
                 </div>
@@ -92,8 +88,6 @@ export const nav = (recipesById) => {
                     <i class="fa-solid fa-x dropdown__search__clear"></i>
                     <i class="fa-solid fa-magnifying-glass dropdown__search__icon"></i>
                 </div>
-
-                <p class="search__result"></p>
 
                 <div class="search__arguments">
                     ${ustensilsFilter}
