@@ -114,6 +114,8 @@ body, html{
 
 .dropdown__display{
     height: 290px;
+}
+.search__arguments{
     overflow: scroll;
 }
 
