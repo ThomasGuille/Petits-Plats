@@ -47,7 +47,7 @@ export const nav = (recipesById) => {
             <div class="dropdown dropdown__ingredients">
                 <div class="dropdown__menu">
                     <p class="dropdown__title">Ingrédients</p>
-                    <i class="fa-solid fa-chevron-down dropdown__chevron"></i>
+                    <i class="fa-solid fa-chevron-down dropdown__chevron chevron"></i>
                 </div>
                 <div class="dropdown__search__form">
                     <input type="text" class="dropdown__search__field">
@@ -65,7 +65,7 @@ export const nav = (recipesById) => {
             <div class="dropdown dropdown__appareils">
                 <div class="dropdown__menu">
                     <p class="dropdown__title">Appareils</p>
-                    <i class="fa-solid fa-chevron-down dropdown__chevron"></i>
+                    <i class="fa-solid fa-chevron-down dropdown__chevron chevron"></i>
                 </div>
 
                 <div class="dropdown__search__form">
@@ -84,7 +84,7 @@ export const nav = (recipesById) => {
             <div class="dropdown dropdown__ustensiles">
                 <div class="dropdown__menu">
                     <p class="dropdown__title">Ustensiles</p>
-                    <i class="fa-solid fa-chevron-down dropdown__chevron"></i>
+                    <i class="fa-solid fa-chevron-down dropdown__chevron chevron"></i>
                 </div>
 
                 <div class="dropdown__search__form">
@@ -110,6 +110,7 @@ export const dropdownDisplay = () => {
     dropDowns.forEach(drop => {
         drop.addEventListener("click", () => {
             drop.parentNode.classList.toggle("dropdown__display");
+            drop.lastElementChild.classList.toggle("fa-rotate-180");
         })
     })
 }
