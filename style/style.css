@@ -115,7 +115,6 @@ body, html{
 .dropdown__display{
     height: 290px;
     overflow: scroll;
-    transition: all 0.5s;
 }
 
 .dropdown__ingredients{

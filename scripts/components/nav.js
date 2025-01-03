@@ -49,7 +49,6 @@ export const nav = (recipesById) => {
                     <p class="dropdown__title">Ingrédients</p>
                     <i class="fa-solid fa-chevron-down dropdown__chevron"></i>
                 </div>
-
                 <div class="dropdown__search__form">
                     <input type="text" class="dropdown__search__field">
                     <i class="fa-solid fa-x dropdown__search__clear"></i>
@@ -101,16 +100,16 @@ export const nav = (recipesById) => {
                 </div>
             </div>
 
-            <p class="search__nb__recettes">1500 recettes</p>
+            <p class="search__nb__recettes">${recipesById.length} recettes</p>
         </nav>
     `;
 }
 
 export const dropdownDisplay = () => {
-    const dropDowns = document.querySelectorAll(".dropdown");
+    const dropDowns = document.querySelectorAll(".dropdown__menu");
     dropDowns.forEach(drop => {
         drop.addEventListener("click", () => {
-            drop.classList.toggle("dropdown__display");
+            drop.parentNode.classList.toggle("dropdown__display");
         })
     })
 }
