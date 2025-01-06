@@ -1,16 +1,13 @@
-export const main = (recipesById) => {
-    // console.log(recipesById);
-    
+export const main = (recipesFiltered) => {
     let recipeCards = ``;
-    recipesById.forEach(recipe => {
+    recipesFiltered.forEach(recipe => {
         const ingredientByRecipe = recipe.ingredients;
-        // console.log(ingredientByRecipe);
         let recipeIngredients = ``;
         ingredientByRecipe.forEach(ingredient => {
             let quantity = ingredient.quantity;
             let unit = ingredient.unit;
-            if(!quantity){quantity = ``}
-            if(!unit){unit = ``}
+            if(!quantity){quantity = ``};
+            if(!unit){unit = ``};
             recipeIngredients += `
                 <div class="ingredient__item">
                     <p class="ingredient__name">${ingredient.ingredient}</p>

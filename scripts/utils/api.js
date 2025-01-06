@@ -14,3 +14,31 @@ export const getRecipes = async () => {
 
     return data.recipes;
 }
+
+const queryselector = window.location.search;
+const urlParams = new URLSearchParams (queryselector);
+const filterSearch = urlParams.get("search");
+const filterIngredient = urlParams.get("ingredient");
+const filterAppliance = urlParams.get("appliance");
+const filterUstensil = urlParams.get("ustensil");
+
+export const filterRecipes = async () => {
+    const recipes = await getRecipes();
+    
+    const filtered = recipes.filter(recipe => {
+        let recipeIngredient = [];
+        recipe.ingredients.forEach(element => {
+            recipeIngredient.push(element.ingredient);
+        });
+        
+        if(recipeIngredient.includes(filterIngredient) || recipe.appliance.includes(filterAppliance) || recipe.ustensils.includes(filterUstensil)){
+            console.log(recipe);
+            return recipe;
+        }
+        if(urlParams == ``){return recipes}
+    })
+
+    return filtered;
+}
+
+// recipeIngredient.includes(filterIngredient) || 

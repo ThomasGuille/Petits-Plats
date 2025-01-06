@@ -1,8 +1,8 @@
-export const nav = (recipesById) => {
+export const nav = (recipesFiltered) => {
     let ingredients = [];
     let appliances = [];
     let ustensils = [];
-    recipesById.forEach(elem => {
+    recipesFiltered.forEach(elem => {
         if(!appliances.includes(elem.appliance)){
             appliances.push(elem.appliance);
         }
@@ -24,21 +24,21 @@ export const nav = (recipesById) => {
     let ingredientsFilter = ``;
     ingredients.forEach(item => {
         ingredientsFilter += `
-            <a href="" class="dropdown__item">${item}</a>
+            <a href="index.html?ingredient=${item}" class="dropdown__item">${item}</a>
         `;
     })
     
     let appliancesFilter = ``;
     appliances.forEach(item => {
         appliancesFilter += `
-            <a href="" class="dropdown__item">${item}</a>
+            <a href="index.html?appliance=${item}" class="dropdown__item">${item}</a>
         `;
     })
 
     let ustensilsFilter = ``;
     ustensils.forEach(item => {
         ustensilsFilter += `
-            <a href="" class="dropdown__item">${item}</a>
+            <a href="index.html?ustensil=${item}" class="dropdown__item">${item}</a>
         `;
     })
 
@@ -94,7 +94,7 @@ export const nav = (recipesById) => {
                 </div>
             </div>
 
-            <p class="search__nb__recettes">${recipesById.length} recettes</p>
+            <p class="search__nb__recettes">${recipesFiltered.length} recettes</p>
         </nav>
     `;
 }
