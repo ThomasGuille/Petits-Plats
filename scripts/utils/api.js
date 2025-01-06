@@ -32,7 +32,6 @@ export const filterRecipes = async () => {
         });
         
         if(recipeIngredient.includes(filterIngredient) || recipe.appliance.includes(filterAppliance) || recipe.ustensils.includes(filterUstensil)){
-            console.log(recipe);
             return recipe;
         }
         if(urlParams == ``){return recipes}
