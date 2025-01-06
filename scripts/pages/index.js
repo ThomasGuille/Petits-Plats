@@ -1,7 +1,7 @@
 
 import { filterRecipes } from "../utils/api.js";
 import { header } from "../components/header.js";
-import { nav, dropdownDisplay } from "../components/nav.js";
+import { nav, dropdownDisplay, filterRecipe } from "../components/nav.js";
 import { main } from "../components/main.js";
 
 const displayData = (recipesFiltered) => {
@@ -15,6 +15,7 @@ const displayData = (recipesFiltered) => {
     `;
 
     dropdownDisplay();
+    filterRecipe();
 }
 
 (async () => {

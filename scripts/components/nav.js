@@ -24,24 +24,23 @@ export const nav = (recipesFiltered) => {
     let ingredientsFilter = ``;
     ingredients.forEach(item => {
         ingredientsFilter += `
-            <a href="index.html?ingredient=${item}" class="dropdown__item">${item}</a>
+            <p data-type="${item}" class="dropdown__item dropdown__item__ingredient">${item}</p>
         `;
     })
     
     let appliancesFilter = ``;
     appliances.forEach(item => {
         appliancesFilter += `
-            <a href="index.html?appliance=${item}" class="dropdown__item">${item}</a>
+            <p data-type="${item}" class="dropdown__item dropdown__item__appliance">${item}</p>
         `;
     })
 
     let ustensilsFilter = ``;
     ustensils.forEach(item => {
         ustensilsFilter += `
-            <a href="index.html?ustensil=${item}" class="dropdown__item">${item}</a>
+            <p data-type="${item}" class="dropdown__item dropdown__item__ustensil">${item}</p>
         `;
     })
-    
 
     return `
         <nav class="nav">
@@ -112,6 +111,40 @@ export const dropdownDisplay = () => {
         drop.addEventListener("click", () => {
             drop.parentNode.classList.toggle("dropdown__display");
             drop.lastElementChild.classList.toggle("fa-rotate-180");
+        })
+    })
+}
+
+export const filterRecipe = () => {
+    const queryselector = window.location.search;
+    let urlParams = new URLSearchParams (queryselector);
+    const filterIngredient = document.querySelectorAll(".dropdown__item__ingredient");
+    const filterAppliance = document.querySelectorAll(".dropdown__item__appliance");
+    const filterUstensil = document.querySelectorAll(".dropdown__item__ustensil");
+
+    filterIngredient.forEach(item => {
+        item.addEventListener("click", (e) => {
+            // e.preventDefault();
+            const data = item.getAttribute("data-type");
+            urlParams.append("ingredient", data);
+            console.log(urlParams);
+            window.location.replace(`index.html?${urlParams}`);
+        })
+    })
+
+    filterAppliance.forEach(item => {
+        item.addEventListener("click", () => {
+            const data = item.getAttribute("data-type");
+            urlParams.append("appliance", data);
+            window.location.replace(`index.html?${urlParams}`);
+        })
+    })
+
+    filterUstensil.forEach(item => {
+        item.addEventListener("click", () => {
+            const data = item.getAttribute("data-type");
+            urlParams.append("ustensil", data);
+            window.location.replace(`index.html?${urlParams}`);
         })
     })
 }

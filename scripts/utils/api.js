@@ -39,5 +39,3 @@ export const filterRecipes = async () => {
 
     return filtered;
 }
-
-// recipeIngredient.includes(filterIngredient) || 
