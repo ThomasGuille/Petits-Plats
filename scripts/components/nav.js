@@ -121,13 +121,12 @@ export const filterRecipe = () => {
     const filterIngredient = document.querySelectorAll(".dropdown__item__ingredient");
     const filterAppliance = document.querySelectorAll(".dropdown__item__appliance");
     const filterUstensil = document.querySelectorAll(".dropdown__item__ustensil");
+    const filtersDisplay = document.querySelector(".nav__filters");
 
     filterIngredient.forEach(item => {
-        item.addEventListener("click", (e) => {
-            // e.preventDefault();
+        item.addEventListener("click", () => {
             const data = item.getAttribute("data-type");
             urlParams.append("ingredient", data);
-            console.log(urlParams);
             window.location.replace(`index.html?${urlParams}`);
         })
     })
@@ -147,4 +146,26 @@ export const filterRecipe = () => {
             window.location.replace(`index.html?${urlParams}`);
         })
     })
+
+    let filter = ``;
+    
+    urlParams.forEach((filtre) => {
+        filter += `
+            <div class="display__filter">
+                <p class="filter__text">${filtre}</p>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        `;
+
+    })
+    filtersDisplay.innerHTML = filter;
+
+    document.querySelectorAll(".display__filter").forEach(filtre => {
+        
+        filtre.addEventListener("click", () => {
+            urlParams.delete("ingredient", filtre.firstElementChild.innerHTML);
+            window.location.replace(`index.html?${urlParams}`);
+        })
+    });
+    
 }

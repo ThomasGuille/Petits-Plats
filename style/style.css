@@ -183,6 +183,25 @@ body, html{
     font-weight: 400;
 }
 
+.nav__filters{
+    display: flex;
+    gap: 2rem;
+    margin-left: 6rem;
+}
+
+.display__filter{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    background: var(--colorYellow);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.display__filter:hover{
+    cursor: pointer;
+}
+
 /* MAIN */
 
 .main{
