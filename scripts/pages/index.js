@@ -1,7 +1,7 @@
-
 import { filterRecipes } from "../utils/api.js";
+import { filterRecipe } from "../utils/filter.js"
 import { header } from "../components/header.js";
-import { nav, dropdownDisplay, filterRecipe } from "../components/nav.js";
+import { nav, dropdownDisplay } from "../components/nav.js";
 import { main } from "../components/main.js";
 
 const displayData = (recipesFiltered) => {
