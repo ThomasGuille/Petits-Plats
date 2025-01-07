@@ -1,4 +1,4 @@
-export const filterRecipe = () => {
+export const filterRecipe = (recipesFiltered) => {
     const queryselector = window.location.search;
     let urlParams = new URLSearchParams (queryselector);
     const filterIngredient = document.querySelectorAll(".dropdown__item__ingredient");
@@ -16,16 +16,55 @@ export const filterRecipe = () => {
         });
     }
 
-    filterSearch.addEventListener("input", (inp) => {
-        console.log(inp.value);
+    filterSearch.addEventListener("input", () => {
+        const searchInput = filterSearch.value;
+        let listAll = [];
+        recipesFiltered.forEach(elem => {
+            if(!listAll.includes(elem.appliance)){
+                listAll.push(elem.appliance);
+            }
+            elem.ustensils.forEach(ustensile => {
+                if(!listAll.includes(ustensile)){
+                    listAll.push(ustensile);
+                }
+            })
+            elem.ingredients.forEach(ingredient => {
+                if(!listAll.includes(ingredient.ingredient)){
+                    listAll.push(ingredient.ingredient);
+                }
+            })
+            listAll.push(elem.name);
+        });
+        listAll.sort();
         
+        let content = ``;
+
+        let data = getMatch(listAll, searchInput);
+        
+        data.forEach(elem => {
+            content += `
+                <p class="search__element">${elem}</p>
+            `;
+        })
+
+        if(searchInput == ``){
+            content = ``;
+        }
+        searchResult.innerHTML = content;
     })
+    // console.log(urlParams.has("ingredient"));
+    // console.log(urlParams.getAll("ingredient").join());
     
     filterIngredient.forEach(item => {
         item.addEventListener("click", () => {
             const data = item.getAttribute("data-type");
             urlParams.append("ingredient", data);
             window.location.replace(`index.html?${urlParams}`);
+            if(urlParams.has("ingredient")){
+                let urlData = urlParams.getAll("ingredient").join();
+                urlParams.set("ingredient", urlData);
+                window.location.replace(`index.html?${urlParams}`);
+            }
         })
     })
 
@@ -34,6 +73,11 @@ export const filterRecipe = () => {
             const data = item.getAttribute("data-type");
             urlParams.append("appliance", data);
             window.location.replace(`index.html?${urlParams}`);
+            if(urlParams.has("appliance")){
+                let urlData = urlParams.getAll("appliance").join();
+                urlParams.set("appliance", urlData);
+                window.location.replace(`index.html?${urlParams}`);
+            }
         })
     })
 
@@ -42,6 +86,11 @@ export const filterRecipe = () => {
             const data = item.getAttribute("data-type");
             urlParams.append("ustensil", data);
             window.location.replace(`index.html?${urlParams}`);
+            if(urlParams.has("ustensil")){
+                let urlData = urlParams.getAll("ustensil").join();
+                urlParams.set("ustensil", urlData);
+                window.location.replace(`index.html?${urlParams}`);
+            }
         })
     })
 

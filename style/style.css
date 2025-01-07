@@ -86,6 +86,20 @@ body, html{
     font-size: 2rem;
 }
 
+.search__result{
+    position: absolute;
+    background-color: white;
+    max-height: 250px;
+    width: 62.1%;
+    overflow: hidden;
+    top: 470px;
+    left: 15rem;
+    padding-left: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 1.5rem;
+    z-index: 10;
+}
+
 /* NAV */
 
 .nav{

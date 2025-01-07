@@ -15,7 +15,7 @@ const displayData = (recipesFiltered) => {
     `;
 
     dropdownDisplay();
-    filterRecipe();
+    filterRecipe(recipesFiltered);
 }
 
 (async () => {
