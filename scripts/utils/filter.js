@@ -6,6 +6,7 @@ export const filterRecipe = () => {
     const filterUstensil = document.querySelectorAll(".dropdown__item__ustensil");
     const filtersDisplay = document.querySelector(".nav__filters");
     const filterSearch = document.querySelector(".search__field");
+    const searchResult = document.querySelector(".search__result");
 
     const getMatch = (arr, str) => {
         let reg = new RegExp(str, "i");
@@ -15,7 +16,10 @@ export const filterRecipe = () => {
         });
     }
 
-    
+    filterSearch.addEventListener("input", (inp) => {
+        console.log(inp.value);
+        
+    })
     
     filterIngredient.forEach(item => {
         item.addEventListener("click", () => {
@@ -43,10 +47,10 @@ export const filterRecipe = () => {
 
     let filter = ``;
     
-    urlParams.forEach((filtre, keys) => {
+    urlParams.forEach((value, keys) => {
         filter += `
             <div class="display__filter" data-filtre="${keys}">
-                <p class="filter__text">${filtre}</p>
+                <p class="filter__text">${value}</p>
                 <i class="fa-solid fa-xmark"></i>
             </div>
         `;

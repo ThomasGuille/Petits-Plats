@@ -12,6 +12,7 @@ export const header = () => {
                     <i class="fa-solid fa-x search__clear"></i>
                     <img src="assets/search-icon.png" alt="" class="search__icon">
                 </div>
+                <div class="search__result"></div>
             </div>
         </header>
     `;
