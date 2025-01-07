@@ -24,21 +24,21 @@ export const nav = (recipesFiltered) => {
     let ingredientsFilter = ``;
     ingredients.forEach(item => {
         ingredientsFilter += `
-            <p data-type="${item}" class="dropdown__item dropdown__item__ingredient">${item}</p>
+            <p data-type="${item}" data-filtre="ingredient" class="dropdown__item dropdown__item__ingredient">${item}</p>
         `;
     })
     
     let appliancesFilter = ``;
     appliances.forEach(item => {
         appliancesFilter += `
-            <p data-type="${item}" class="dropdown__item dropdown__item__appliance">${item}</p>
+            <p data-type="${item}" data-filtre="appliance" class="dropdown__item dropdown__item__appliance">${item}</p>
         `;
     })
 
     let ustensilsFilter = ``;
     ustensils.forEach(item => {
         ustensilsFilter += `
-            <p data-type="${item}" class="dropdown__item dropdown__item__ustensil">${item}</p>
+            <p data-type="${item}" data-filtre="ustensil" class="dropdown__item dropdown__item__ustensil">${item}</p>
         `;
     })
 
@@ -149,23 +149,23 @@ export const filterRecipe = () => {
 
     let filter = ``;
     
-    urlParams.forEach((filtre) => {
+    urlParams.forEach((filtre, keys) => {
         filter += `
-            <div class="display__filter">
+            <div class="display__filter" data-filtre="${keys}">
                 <p class="filter__text">${filtre}</p>
                 <i class="fa-solid fa-xmark"></i>
             </div>
         `;
-
     })
+
     filtersDisplay.innerHTML = filter;
 
     document.querySelectorAll(".display__filter").forEach(filtre => {
+        const filtreType = filtre.getAttribute("data-filtre");
         
         filtre.addEventListener("click", () => {
-            urlParams.delete("ingredient", filtre.firstElementChild.innerHTML);
+            urlParams.delete(filtreType, filtre.firstElementChild.innerHTML);
             window.location.replace(`index.html?${urlParams}`);
         })
     });
-    
 }
