@@ -220,6 +220,11 @@ body, html{
     cursor: pointer;
 }
 
+.item__select{
+    background: var(--colorYellow);
+    user-select: none;
+}
+
 /* MAIN */
 
 .main{
