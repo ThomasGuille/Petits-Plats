@@ -56,12 +56,11 @@ export const filterRecipe = (recipesFiltered) => {
         const FilterType = item.getAttribute("data-filtre");
         item.addEventListener("click", () => {
             urlParams.append(FilterType, filterValue);
-            window.location.replace(`index.html?${urlParams}`);
             if(urlParams.has(FilterType)){
                 let urlData = urlParams.getAll(FilterType).join();
                 urlParams.set(FilterType, urlData);
-                window.location.replace(`index.html?${urlParams}`);
             }
+            window.location.replace(`index.html?${urlParams}`);
         })
     })
 
