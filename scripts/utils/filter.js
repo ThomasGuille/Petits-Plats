@@ -52,9 +52,9 @@ export const filterRecipe = (recipesFiltered) => {
     })
 
     filtering.forEach(item => {
+        const filterValue = item.getAttribute("data-type");
+        const FilterType = item.getAttribute("data-filtre");
         item.addEventListener("click", () => {
-            const filterValue = item.getAttribute("data-type");
-            const FilterType = item.getAttribute("data-filtre");
             urlParams.append(FilterType, filterValue);
             window.location.replace(`index.html?${urlParams}`);
             if(urlParams.has(FilterType)){
@@ -68,20 +68,30 @@ export const filterRecipe = (recipesFiltered) => {
     let filter = ``;
     
     urlParams.forEach((value, keys) => {
-        filter += `
-            <div class="display__filter" data-filtre="${keys}">
-                <p class="filter__text">${value}</p>
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-        `;
+        let buttonValue = value.split(",");
+        buttonValue.forEach((elem, index) => {
+            filter += `
+                <div class="display__filter" data-filtre="${keys}" data-position="${index}">
+                    <p class="filter__text">${elem}</p>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            `;
+        })
     })
 
     filtersDisplay.innerHTML = filter;
 
+    
     document.querySelectorAll(".display__filter").forEach(filtre => {
         const filtreType = filtre.getAttribute("data-filtre");
+        const filtrePosition = filtre.getAttribute("data-position");
         filtre.addEventListener("click", () => {
-            urlParams.delete(filtreType, filtre.firstElementChild.innerText);
+            let urlNew = urlParams.get(filtreType).split(",");
+            urlNew.splice(filtrePosition, 1);
+            urlParams.set(filtreType, urlNew.join());
+            if(urlNew == ''){
+                urlParams.delete(filtreType);
+            };
             window.location.replace(`index.html?${urlParams}`);
         })
     });
