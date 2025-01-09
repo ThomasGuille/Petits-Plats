@@ -24,6 +24,8 @@ const filterUstensil = urlParams.get("ustensil");
 
 export const filterRecipes = async () => {
     const recipes = await getRecipes();
+    let ingredient = '';
+    let ustensil = '';
     
     const filtered = recipes.filter(recipe => {
         let recipeIngredient = [];
@@ -31,11 +33,17 @@ export const filterRecipes = async () => {
             recipeIngredient.push(element.ingredient);
         });
         
+        if(filterIngredient != null){
+            ingredient = filterIngredient.split(",");
+        }
+
+        if(filterUstensil != null){
+            ustensil = filterUstensil.split(",");
+        }
+
         if(urlParams == ''){
             return recipes;
-        } else if((recipeIngredient.some(ing => filterIngredient.split(",").includes(ing))) || recipe.appliance.includes(filterAppliance) || recipe.ustensils.includes(filterUstensil)){
-            console.log(recipeIngredient);
-            console.log(filterIngredient.split(","));
+        } else if((recipeIngredient.some(ing => ingredient.includes(ing))) || recipe.appliance.includes(filterAppliance) || (recipe.ustensils.some(ust => ustensil.includes(ust)))){
             return recipe;
         }
     })
