@@ -1,9 +1,7 @@
 export const filterRecipe = (recipesFiltered) => {
     const queryselector = window.location.search;
     let urlParams = new URLSearchParams (queryselector);
-    const filterIngredient = document.querySelectorAll(".dropdown__item__ingredient");
-    const filterAppliance = document.querySelectorAll(".dropdown__item__appliance");
-    const filterUstensil = document.querySelectorAll(".dropdown__item__ustensil");
+    const filtering = document.querySelectorAll(".dropdown__item");
     const filtersDisplay = document.querySelector(".nav__filters");
     const filterSearch = document.querySelector(".search__field");
     const searchResult = document.querySelector(".search__result");
@@ -52,43 +50,16 @@ export const filterRecipe = (recipesFiltered) => {
         }
         searchResult.innerHTML = content;
     })
-    // console.log(urlParams.has("ingredient"));
-    // console.log(urlParams.getAll("ingredient").join());
-    
-    filterIngredient.forEach(item => {
-        item.addEventListener("click", () => {
-            const data = item.getAttribute("data-type");
-            urlParams.append("ingredient", data);
-            window.location.replace(`index.html?${urlParams}`);
-            if(urlParams.has("ingredient")){
-                let urlData = urlParams.getAll("ingredient").join();
-                urlParams.set("ingredient", urlData);
-                window.location.replace(`index.html?${urlParams}`);
-            }
-        })
-    })
 
-    filterAppliance.forEach(item => {
+    filtering.forEach(item => {
         item.addEventListener("click", () => {
-            const data = item.getAttribute("data-type");
-            urlParams.append("appliance", data);
+            const filterValue = item.getAttribute("data-type");
+            const FilterType = item.getAttribute("data-filtre");
+            urlParams.append(FilterType, filterValue);
             window.location.replace(`index.html?${urlParams}`);
-            if(urlParams.has("appliance")){
-                let urlData = urlParams.getAll("appliance").join();
-                urlParams.set("appliance", urlData);
-                window.location.replace(`index.html?${urlParams}`);
-            }
-        })
-    })
-
-    filterUstensil.forEach(item => {
-        item.addEventListener("click", () => {
-            const data = item.getAttribute("data-type");
-            urlParams.append("ustensil", data);
-            window.location.replace(`index.html?${urlParams}`);
-            if(urlParams.has("ustensil")){
-                let urlData = urlParams.getAll("ustensil").join();
-                urlParams.set("ustensil", urlData);
+            if(urlParams.has(FilterType)){
+                let urlData = urlParams.getAll(FilterType).join();
+                urlParams.set(FilterType, urlData);
                 window.location.replace(`index.html?${urlParams}`);
             }
         })

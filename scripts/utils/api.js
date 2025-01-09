@@ -31,10 +31,13 @@ export const filterRecipes = async () => {
             recipeIngredient.push(element.ingredient);
         });
         
-        if(recipeIngredient.includes(filterIngredient) || recipe.appliance.includes(filterAppliance) || recipe.ustensils.includes(filterUstensil)){
+        if(urlParams == ''){
+            return recipes;
+        } else if((recipeIngredient.some(ing => filterIngredient.split(",").includes(ing))) || recipe.appliance.includes(filterAppliance) || recipe.ustensils.includes(filterUstensil)){
+            console.log(recipeIngredient);
+            console.log(filterIngredient.split(","));
             return recipe;
         }
-        if(urlParams == ``){return recipes}
     })
 
     return filtered;
