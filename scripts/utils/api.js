@@ -43,7 +43,7 @@ export const filterRecipes = async () => {
 
         if(urlParams == ''){
             return recipes;
-        } else if((recipeIngredient.some(ing => ingredient.includes(ing))) || recipe.appliance.includes(filterAppliance) || (recipe.ustensils.some(ust => ustensil.includes(ust)))){
+        } else if((recipeIngredient.some(ing => ingredient.includes(ing))) || recipe.name.includes(filterSearch) || recipeIngredient.includes(filterSearch) || recipe.appliance.includes(filterSearch) || recipe.ustensils.includes(filterSearch) || recipe.appliance.includes(filterAppliance) || (recipe.ustensils.some(ust => ustensil.includes(ust)))){
             return recipe;
         }
     })

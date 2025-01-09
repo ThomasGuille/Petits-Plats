@@ -44,11 +44,19 @@ export const filterRecipe = (recipesFiltered) => {
                 <p class="search__element">${elem}</p>
             `;
         })
-
+        
         if(searchInput == ``){
             content = ``;
         }
         searchResult.innerHTML = content;
+
+        const searchElement = document.querySelectorAll(".search__element");
+        searchElement.forEach(item => {
+            item.addEventListener("click", () => {
+                urlParams.set("search", item.innerText);
+                window.location.replace(`index.html?${urlParams}`);
+            })
+        })
     })
 
     filtering.forEach(item => {
