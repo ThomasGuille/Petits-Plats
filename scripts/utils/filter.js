@@ -50,6 +50,11 @@ export const filterRecipe = (recipesFiltered) => {
         }
         searchResult.innerHTML = content;
 
+        const searchIcon = document.querySelector(".search__icon");
+        searchIcon.addEventListener("click", () => {
+            console.log("test")
+        })
+
         const searchElement = document.querySelectorAll(".search__element");
         searchElement.forEach(item => {
             item.addEventListener("click", () => {

@@ -216,7 +216,7 @@ body, html{
     border-radius: 0.5rem;
 }
 
-.display__filter:hover{
+.display__filter:hover, .search__icon:hover{
     cursor: pointer;
 }
 
